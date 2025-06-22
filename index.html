@@ -1,135 +1,168 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oakTINO | ホーム</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>oakTINO | ホーム</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
 
-        body {
-            font-family: 'Noto Serif JP', serif;
-            text-align: center;
-            background-color: #f8f1e9;
-            color: #4a4a4a;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('https://images.hdqwalls.com/download/sakura-river-japan-do-1600x900.jpg');
-            background-size: cover;
-            background-position: center;
-            animation: fadeIn 3s ease-in-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        .container {
-            width: 500px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-            animation: slideUp 1s ease-out;
-        }
-        @keyframes slideUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        h1 {
-            font-weight: 700;
-            color: #b43f67;
-            animation: bounceIn 1.5s ease-out;
-        }
-        @keyframes bounceIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            60% { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        a {
-            color: #b43f67;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .socials a {
-            display: inline-block;
-            margin: 5px;
-            padding: 8px 15px;
-            background: #b43f67;
-            color: white;
-            border-radius: 10px;
-        }
-        .socials a:hover {
-            background: #ff5f9e;
-        }
-        .friends, .about-me, .anime, .games {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .friend, .anime-list, .game-list {
-            margin: 5px 0;
-            font-weight: bold;
-            color: #4a4a4a; /* Default black for friends */
-        }
-        .friend.special {
-            color: #e91e63; /* Pink for Izumi */
-            font-size: 1.5em; /* Bigger text for Izumi */
-        }
-    </style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Serif JP', serif;
+      background: url('https://images.hdqwalls.com/download/sakura-river-japan-do-1600x900.jpg') no-repeat center center/cover;
+      color: #4a4a4a;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 3s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      color: #b43f67;
+      animation: bounceIn 1.5s ease-out;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    a {
+      color: #b43f67;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 18px;
+      background: #b43f67;
+      color: white;
+      border-radius: 10px;
+      font-size: 0.95em;
+    }
+
+    .socials a:hover {
+      background: #ff5f9e;
+    }
+
+    .friend {
+      margin: 5px 0;
+      font-weight: bold;
+      color: #4a4a4a;
+    }
+
+    .friend.special {
+      color: #e91e63;
+      font-size: 1.5em;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .socials a {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+      }
+
+      .friend.special {
+        font-size: 1.2em;
+      }
+
+      .container {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>こんにちは、oakTINOです！</h1>
-        <p>🇲🇦 モロッコ | 🇪🇺 ヨーロッパ</p>
-        <p>🌐 言語: 🇫🇷 フランス語 | 🇫🇮 フィンランド語 | 🇬🇧 英語 | 🇸🇦 アラビア語</p>
-        <p>🎮 Roblox: <a href="https://www.roblox.com/users/ROBLOX_oaktino/profile" target="_blank">@ROBLOX_oaktino</a></p>
-        <p>💬 Discord & Everywhere: <strong>oaktino</strong></p>
+  <div class="container">
+    <h1>こんにちは、oakTINOです！</h1>
+    <p>🇲🇦 モロッコ | 🇪🇺 ヨーロッパ</p>
+    <p>🌐 言語: 🇫🇷 フランス語 | 🇫🇮 フィンランド語 | 🇬🇧 英語 | 🇸🇦 アラビア語</p>
+    <p>🎮 Roblox: <a href="https://www.roblox.com/users/ROBLOX_oaktino/profile" target="_blank">@ROBLOX_oaktino</a></p>
+    <p>💬 Discord & Everywhere: <strong>oaktino</strong></p>
 
-        <div class="about-me">
-            <h2>About Me</h2>
-            <p>Hey! oakTINO here, I am a little developer in many languages and PC Expert, I enjoy cybersecurity stuff cause why not? I also like playing games, Owner of Parapixel Games, OMakes LLC. And I'm pretty active on socials especially discord.</p>
-        </div>
-
-        <div class="anime">
-            <h2>見たアニメ</h2>
-            <p class="anime-list">🍣 One Piece</p>
-            <p class="anime-list">🌸 Darling in the Franxx</p>
-            <p class="anime-list">🍜 Naruto</p>
-            <p class="anime-list">⚡ Jujutsu Kaisen (JJK)</p>
-            <p class="anime-list">🪓 Chainsaw Man</p>
-        </div>
-
-        <div class="games">
-            <h2>お気に入りのゲーム</h2>
-            <p class="game-list">🎮 Valorant, Minecraft, Roblox, Overwatch 2, R.E.P.O.</p>
-        </div>
-
-        <div class="socials">
-            <a href="https://discord.gg/B99ukcGgnT" target="_blank">Discordへ</a>
-            <a href="https://twitter.com/oaktinorl" target="_blank">Twitter</a>
-            <a href="https://github.com/oakTINOoff" target="_blank">GitHub</a>
-        </div>
-
-        <div class="friends">
-            <h2>重要な人物</h2>
-            <p class="friend.special">🌸 Oonita </p>
-            <p class="friend">🍃 Tino</p>
-            <p class="friend">⚡ Xen</p>
-            <p class="friend">🐻 Huggy Bear</p>
-            <p class="friend">👻 Buggy Boo</p>
-            <p class="friend">👑 Leah</p>
-            <p class="friend">⚡ Zee</p>
-        </div>
+    <div class="section">
+      <h2>About Me</h2>
+      <p>Hey! oakTINO here, I am a little developer in many languages and PC Expert. I enjoy cybersecurity stuff cause why not? I also like playing games, Owner of Parapixel Games, OMakes LLC. And I'm pretty active on socials especially discord.</p>
     </div>
+
+    <div class="section">
+      <h2>見たアニメ</h2>
+      <p>🍣 One Piece</p>
+      <p>🌸 Darling in the Franxx</p>
+      <p>🍜 Naruto</p>
+      <p>⚡ Jujutsu Kaisen (JJK)</p>
+      <p>🪓 Chainsaw Man</p>
+    </div>
+
+    <div class="section">
+      <h2>お気に入りのゲーム</h2>
+      <p>🎮 Valorant, Minecraft, Roblox, Overwatch 2, R.E.P.O.</p>
+    </div>
+
+    <div class="section socials">
+      <a href="https://discord.gg/B99ukcGgnT" target="_blank">Discordへ</a>
+      <a href="https://twitter.com/oaktinorl" target="_blank">Twitter</a>
+      <a href="https://github.com/oakTINOoff" target="_blank">GitHub</a>
+    </div>
+
+    <div class="section">
+      <h2>重要な人物</h2>
+      <p class="friend special">🌸 Oonita</p>
+      <p class="friend">🍃 Tino</p>
+      <p class="friend">⚡ Xen</p>
+      <p class="friend">🐻 Huggy Bear</p>
+      <p class="friend">👻 Buggy Boo</p>
+      <p class="friend">👑 Leah</p>
+      <p class="friend">⚡ Zee</p>
+    </div>
+  </div>
 </body>
 </html>
